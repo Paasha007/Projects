@@ -1,0 +1,45 @@
+Create database Bank_Database_Management;
+Use Bank_Database_Management;
+
+select * from test;
+### There are in total 1000 entries in the given data
+
+#1 Check Avg, Max and Min Age From the data
+select avg(age) from test;
+select max(age) from test;
+select min(age) from test;
+### The Average age in the given dataset is (41.1701)
+### The Maximum age in the given dataset is (87)
+### The Minimum age in the given dataset is (19)
+
+#1a Check the loan data
+select * from test where loan = "yes";
+#There are in total (691) entries who have loan
+
+#1b Check the housing and loan data
+select * from test where  housing = "yes" and loan = "yes";
+# There are in total (406) entries having housing and loan
+
+#1c Chect poutcome data for failure 
+select * from test where poutcome = "failure";
+# There are in total (490) entries of failure in poutcome
+
+#1d Chect max for campaign 
+select max(campaign) from test;
+# The max number of campaign is 50
+
+#2 Check the unemployed data
+select * from test where job = "unemployed";
+### There are in total (128)entries who are unemployed
+
+#2a Check the unemployed data where marital status is single and contact is unknown
+select * from test where job = "unemployed" and marital ="single" and contact = "unknown";
+### There are in total (8 entries) who are unemployed and single with no contact.
+
+#3 Check the entries where balace is negative
+select * from test where balance < 0;
+### There are in total (366 entries) whose balance is in negative
+
+#3a Check the entries where balace is negative and loan is taken
+select * from test where  balance < 0 and loan = "yes";
+### There are in total (103 entries) having a loan with a negative balance in their bank account.
